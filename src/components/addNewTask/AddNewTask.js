@@ -3,10 +3,8 @@ import React, { useState } from "react";
 const AddNewTask = ({ tasks }) => {
   const [newTask, setNewTask] = useState("");
 
-  
-
-  const changeNewTaskHandler = (e) => {
-    setNewTask(e.target.value);
+  const changeNewTaskHandler = (event) => {
+    setNewTask(event.target.value);
   };
   const addedTaskHandler = () => {
     if (newTask.length === 0) {
