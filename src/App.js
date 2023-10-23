@@ -12,15 +12,16 @@ function App() {
     { brand: "Burger King", income: 1927361 },
     { brand: "KFC", income: 1098463 },
   ];
-  const tasks = [
-    { id: 1, task: "hacer compras" },
-    { id: 2, task: "hacer tareas" },
-    { id: 3, task: "limpieza de pc" },
-  ];
+
+  const onLongOutHandler = () => {
+    console.log("sesion cerrada!")
+    setIsValid(false);
+  };
 
   const handleIsValidChange = (value) => {
     setIsValid(value);
-    console.log(isValid);
+    
+    
   };
 
   const sumIncome = netIncomes.reduce((sum, item) => sum + item.income, 0);
@@ -42,10 +43,14 @@ function App() {
         {isValid ? (
           <>
             <h2>ejercicio4</h2>
-            <FormTask tasks={tasks} />
+            <button onClick={onLongOutHandler}>Cerrar sesion</button>
+            <FormTask />
           </>
         ) : (
-          <p>Primero debe registrarse</p>
+          <p>
+            Primero debe registrarse en el login para poder acceder a la
+            practica 4
+          </p>
         )}
       </div>
     </div>

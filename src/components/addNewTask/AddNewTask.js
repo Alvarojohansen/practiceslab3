@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const AddNewTask = ({ tasks }) => {
-  const [newTask, setNewTask] = useState("");
+const AddNewTask = ({ tasks, onAddTask }) => {
 
+  const [newTask, setNewTask] = useState("");
   const changeNewTaskHandler = (event) => {
     setNewTask(event.target.value);
   };
@@ -10,10 +10,12 @@ const AddNewTask = ({ tasks }) => {
     if (newTask.length === 0) {
       alert("debe poner algo");
     } else {
-      console.log(newTask);
-      
+       const newTaskObject = { id: tasks.length + 1, task: newTask };
+       onAddTask(newTaskObject);
+       setNewTask("");
     }
   };
+  
 
   return (
     <div>
@@ -23,7 +25,7 @@ const AddNewTask = ({ tasks }) => {
         value={newTask}
         placeholder="Ingrese nueva tarea"
       />
-      <button onClick={addedTaskHandler}>agregar</button>
+      <button onClick={addedTaskHandler}>Agregar</button>
     </div>
   );
 };
