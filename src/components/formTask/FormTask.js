@@ -20,7 +20,7 @@ const FormTask = () => {
         <AddNewTask tasks={tasks} onAddTask={addTask} />
       </div>
       <div>
-        <ListTask tasks={tasks} />
+        <ListTask tasks={tasks} setTasks={setTasks} />
       </div>
     </div>
   );
