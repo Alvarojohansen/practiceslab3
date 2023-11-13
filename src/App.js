@@ -15,13 +15,12 @@ function App() {
 
   const onLongOutHandler = () => {
     console.log("sesion cerrada!")
+    alert("usted cerro sesion!")
     setIsValid(false);
   };
 
   const handleIsValidChange = (value) => {
     setIsValid(value);
-    
-    
   };
 
   const sumIncome = netIncomes.reduce((sum, item) => sum + item.income, 0);
@@ -38,7 +37,7 @@ function App() {
         <h2>ejercicio 3</h2>
         <Login onIsValidChange={handleIsValidChange} />
       </div>
-      {}
+      
       <div>
         {isValid ? (
           <>

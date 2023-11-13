@@ -20,7 +20,7 @@ const Login = ({ onIsValidChange }) => {
     } else {
       alert("Ingresado correctamente");
       setIsValid(true);
-      onIsValidChange(()=>isValid)
+      onIsValidChange(true)
     }
     
   };
